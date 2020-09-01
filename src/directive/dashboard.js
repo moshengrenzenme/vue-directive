@@ -43,10 +43,13 @@ export default {
             }
             // 绑定style
             const _bindStyleText = () => {
-                el.style = `transform-origin: 0 0;
-                        transform: scale(${scaling},${scaling}) translate(${translate});
-                        width:${designWidth}px;
-                        height:${designHeight}px;`
+                let s = {
+                        "transform-origin": "0 0",
+                        transform: `scale(${scaling},${scaling}) translate(${translate})`,
+                        width: `${designWidth}px`,
+                        height: `${designHeight}px`
+                    }
+                Object.assign(el.style, s)
             }
             // 窗口变化后重新计算
             let resize = () => {
